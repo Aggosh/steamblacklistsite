@@ -1,17 +1,29 @@
 {% block content %}
-	<p>Hello {{ user.username }}</p>
-	<a href="/accounts/logout/">logOut</a>
-	<form method="post" enctype="multipart/form-data">
-	  {% csrf_token %}
-	  <table>
-	    {{ form }}
-	    <tr>
-	      <td colspan="2">
-	        <input type="submit" value="Save"/>
-	      </td>
-	    </tr>
-	  </table>
-	</form>
-	<a href="/get_file">Download</a>
-	<a href="/get_text">Text</a>
+{% load static %}
+<head>
+	<script src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+</head>
+<body>
+	<link rel="stylesheet" type="text/css" href="{% static 'blacklist/style.css' %}">
+	<div id="main_blacklist">
+		<div id="hello_username">
+			<p style="text-align: center;">{{ user.username }}</p>
+			<a id="logout" href="/accounts/logout/">logout</a>
+		</div>
+		<div id="input_black">
+			<form  method="post" enctype="multipart/form-data">
+			    {% csrf_token %}
+			    {{ form }}
+			    <input type="submit" value="Save"/>
+			</form>
+			<a id="download_button" href="/get_file">Download</a>
+		</div>
+		<div id="ditails">
+			<p>Blacklist size:<b> {{ blacklist.blacklist_size }}</b></p>
+			<p>Last updete:<b> {{ blacklist.user }}</b></p>
+			<p>Added:<b> {{ blacklist.edit }}</b></p>
+			<p>Date:<b> {{ blacklist.pub_date }}</b></p>
+		</div>
+	</div>
+</body>
 {% endblock %}

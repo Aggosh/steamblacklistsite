@@ -1,2 +1,8 @@
-<p>You not loggin kek</p>
-<a href="/accounts/login/">logIn</a>
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'blacklist/style.css' %}">
+<body>
+	<div id="not_login">
+		<p class="no_log_text">You're not login</p>
+		<a class="no_log_text" href="/accounts/login/">logIn</a>
+	</div>
+</body>

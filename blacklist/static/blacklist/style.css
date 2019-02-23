@@ -1,0 +1,98 @@
+body{
+	background-color: #333;
+}
+p{
+	color: #95EC00;
+}
+a {
+  background-color: #36BBCE;
+  color: white;
+  padding: 1em 1.5em;
+  text-decoration: none;
+  text-align: center;
+  display: block;
+}
+
+a:hover {
+  background-color: #015965;
+  cursor: pointer;
+}
+
+label{
+	color: #95EC00;
+	text-align: center;
+	width: 100%;
+	display: block;
+}
+
+input[type=submit]{
+  width: 100%;
+  background-color: #80B12C;
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-decoration: none;
+  margin: 4px 0px;
+  cursor: pointer;
+  display: block;
+}
+
+input[type=submit]:hover{
+	background-color: #619A00;
+	cursor: pointer;
+}
+
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+#login, #not_login{
+	margin: auto;
+	width: 50%;
+	border: 3px solid #619A00;
+	padding: 10px;
+}
+
+#logout{
+	padding: 0.3em 1.5em;
+}
+
+#hello_username{
+	float: right;
+}
+
+#input_black{
+	width: 30%;
+	float: center;
+	display: inline-block;
+}
+
+#ditails{
+	display: inline-block;
+	width: 30%;
+	float: left;
+}
+
+#download_button{
+ 	margin: 4px 0px;
+}
+
+.no_log_text{
+	text-align: center;
+}
+
+#main_blacklist{
+	margin: auto;
+	border: 3px solid #619A00;
+	padding: 10px;
+}
+b{
+	color: #36BBCE;
+	font-weight: normal;
+}

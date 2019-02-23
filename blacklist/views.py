@@ -5,6 +5,7 @@ from django.conf import settings
 
 from .handle import handle_uploaded_file
 from .forms import UploadFileForm
+from .models import blacklist
 
 import os
 
@@ -13,15 +14,16 @@ import os
 
 def index(request):
 	if request.user.is_authenticated:
+		bl = blacklist.objects.latest('pk')
 		if request.method == 'POST':
 			form = UploadFileForm(request.POST, request.FILES)
 			if form.is_valid():
-				handle_uploaded_file(request.FILES['blacklist'])
+				handle_uploaded_file(request.FILES['blacklist'], request.user.username)
 				return HttpResponseRedirect('/')
-			return render(request, 'index.html', {'form': form})
+			return render(request, 'index.html', {'form': form, 'blacklist': bl})
 		else:
 			form = UploadFileForm()
-		return render(request, 'index.html', {'form': form})
+		return render(request, 'index.html', {'form': form, 'blacklist': bl})
 	else:
 		return render(request, 'index_no_login.html')
 
