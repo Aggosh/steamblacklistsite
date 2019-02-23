@@ -1,0 +1,17 @@
+{% block content %}
+	<p>Hello {{ user.username }}</p>
+	<a href="/accounts/logout/">logOut</a>
+	<form method="post" enctype="multipart/form-data">
+	  {% csrf_token %}
+	  <table>
+	    {{ form }}
+	    <tr>
+	      <td colspan="2">
+	        <input type="submit" value="Save"/>
+	      </td>
+	    </tr>
+	  </table>
+	</form>
+	<a href="/get_file">Download</a>
+	<a href="/get_text">Text</a>
+{% endblock %}

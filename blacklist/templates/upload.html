@@ -1,0 +1,13 @@
+{% block content %}
+  <form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <table>
+      {{ form }}
+      <tr>
+        <td colspan="2">
+          <input id="id_docfile" type="file" name="docfile"/>
+        </td>
+      </tr>
+    </table>
+  </form>
+{% endblock %}
