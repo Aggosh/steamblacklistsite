@@ -65,17 +65,17 @@ input[type=text], input[type=password] {
 
 #hello_username{
 	float: right;
+	width: 33%;
 }
 
 #input_black{
-	width: 30%;
-	float: center;
+	width: 33%;
 	display: inline-block;
 }
 
 #ditails{
 	display: inline-block;
-	width: 30%;
+	width: 33%;
 	float: left;
 }
 
